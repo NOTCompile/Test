@@ -7,7 +7,7 @@
         <title>APP</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://pm1.narvii.com/7263/3f099703898f9b9835aa18f621cf396aa057b2f0r1-1280-720v2_hq.jpg" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Poco a poco
                 </div>
 
                 <div class="links">
