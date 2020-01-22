@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>APP</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #1;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
