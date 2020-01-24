@@ -8,25 +8,37 @@ use App;
 class PagesController extends Controller
 {
     public function Inicio(){
-        return view('welcome');
+        return view('inicio');
     }
 
-    public function Inventario(){
-        return view('inventario');
-    }
 
+    //Productos
     public function Producto(){
-        return view('producto');
+
+        $item_producto = App\Producto::all();
+
+        return view('Producto', compact('item_producto'));
     }
 
+    //Productos Detalles
+    public function Producto_Detalle($id){
+        $producto = App\Producto::find($id);
+
+        return view('producto.detalle', compact('producto'));
+    }
+
+
+    //Clientes
     public function Cliente(){
-        return view('cliente');
+        return view('Cliente');
     }
 
+
+    //Usuario
     public function Usuario(){
         $nombre = App\Usuario::all();
 
-        return view('usuario', compact('nombre'));
+        return view('Usuario', compact('nombre'));
     }
 
 }

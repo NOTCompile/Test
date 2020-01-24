@@ -15,6 +15,7 @@ class CreateDatosequiposTable extends Migration
     {
         Schema::create('datosequipos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('codigo_equipo');
             $table->string('marca_motor');
             $table->string('modelo_motor');
             $table->string('nserie_motor');
