@@ -24,9 +24,9 @@ class PagesController extends Controller
     }
 
     public function Usuario(){
-
         $nombre = App\Usuario::all();
-        return view('usuarios', compact('nombre'));
+
+        return view('usuario', compact('nombre'));
     }
 
 }
