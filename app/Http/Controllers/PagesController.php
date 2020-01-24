@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class PagesController extends Controller
 {
@@ -22,11 +23,10 @@ class PagesController extends Controller
         return view('cliente');
     }
 
-    public function Usuario($tipo_usuario1 = null){
-        $tipo_usuario =  ['Gerente General', 'Técnico', 'Secretaria', 'Cliente'];
+    public function Usuario(){
 
-        //return view('usuario', ['tipo_usuario'=>$tipo_usuario]);
-        return view('usuario',compact('tipo_usuario', 'tipo_usuario1'));
+        $nombre = App\Usuario::all();
+        return view('usuarios', compact('nombre'));
     }
 
 }

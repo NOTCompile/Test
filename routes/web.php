@@ -8,7 +8,7 @@ Route::get('producto', 'PagesController@Producto')->name('Producto');
 
 Route::get('cliente', 'PagesController@Cliente')->name('Cliente');
 
-Route::get('usuario/{tipo_usuario1?}', 'PagesController@Usuario')->name('Usuario');
+Route::get('usuario', 'PagesController@Usuario')->name('Usuario');
 
 
 
