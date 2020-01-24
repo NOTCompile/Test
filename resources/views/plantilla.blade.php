@@ -12,14 +12,20 @@
   </head>
   <body>
 
+     <div class="container bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
+     <br>
      <div class="container">
-     <a href="{{ route('Inventario') }}" class="btn btn-primary">Inventario</a>
-     <a href="{{ route('Producto') }}" class="btn btn-primary">Productos</a>
-     <a href="{{ route('Cliente') }}" class="btn btn-primary">Cliente</a>
+          <a href="{{ route('Inventario') }}" class="btn btn-primary">Inventario</a>
+          <a href="{{ route('Producto') }}" class="btn btn-primary">Productos</a>
+          <a href="{{ route('Cliente') }}" class="btn btn-primary">Cliente</a>
+          <a href="{{ route('Usuario') }}" class="btn btn-primary">Usuario</a>
      </div>
-    <div class="container">
-     @yield('seccion')
-    </div>
+     <br>     
+     <div class="container">
+          @yield('seccion')
+     </div>
+     <br>
+     <div class="container bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

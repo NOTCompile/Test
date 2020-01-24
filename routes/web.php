@@ -25,7 +25,17 @@ Route::get('producto', function () {
 
 Route::get('cliente', function () {
     return view('cliente');
-})->name('Cliente   ');
+})->name('Cliente');
+
+Route::get('usuario/{tipo_usuario1?}', function ($tipo_usuario1 = null) {
+
+    $tipo_usuario =  ['Gerente General', 'Técnico', 'Secretaria', 'Cliente'];
+
+    //return view('usuario', ['tipo_usuario'=>$tipo_usuario]);
+    return view('usuario',compact('tipo_usuario', 'tipo_usuario1'));
+})->name('Usuario');
+
+
 
 //Route::view('Inventario', 'indice', [ 'id_producto' => 10]);
 
