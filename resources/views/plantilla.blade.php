@@ -32,21 +32,24 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown link
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
           </li>
         </ul>
       </div>
     </nav>
-    {{-- Contenedor--}}
-     <div class="container">
-          @yield('seccion')
-     </div>
-    {{-- Contenedor--}}
-     <div class="container-fluid bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
+    <!-- Contenedor-->
+      <div class="container">
+            @yield('seccion')
+      </div>
+    
+    
+    <!-- Footer-->
+    <br>
+    <div class="container-fluid bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
