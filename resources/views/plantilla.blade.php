@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,13 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Electromatic Industrial S.R.L. Inventario</title>
+    <title>Grupos Electrogenos</title>
   </head>
   <body>
-      <div class="container my-4">
-          <h1 class="display-4">Test</h1>
-      </div>
-    
+
+     <div class="container">
+     <a href="{{ route('Inventario') }}" class="btn btn-primary">Inventario</a>
+     <a href="{{ route('Producto') }}" class="btn btn-primary">Productos</a>
+     <a href="{{ route('Cliente') }}" class="btn btn-primary">Cliente</a>
+     </div>
+    <div class="container">
+     @yield('seccion')
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
