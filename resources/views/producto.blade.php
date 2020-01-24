@@ -6,7 +6,7 @@
           <table class="table">
                <thead>
                <tr>
-               <th scope="col">ID</th>
+               <th scope="col">Codigo</th>
                <th scope="col">Nombre del Producto</th>
                <th scope="col">Empresa del Producto</th>
                <th scope="col">Ubicación del Producto</th>
@@ -15,7 +15,7 @@
                <tbody>
                @foreach ($item_producto as $item)
                     <tr>
-                    <th scope="row">{{ $item->id_producto }}</th>
+                    <th scope="row">{{ $item->codigo_producto }}</th>
                     <th scope="row">
                          <a href="{{ route('producto.detalle', $item) }}">
                               {{ $item->nombre_producto }}
