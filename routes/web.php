@@ -5,12 +5,11 @@ Route::get('/', 'PagesController@Inicio')->name('Inicio');
 //Producto
 Route::get('/producto', 'PagesController@Producto')->name('Producto');
 
-Route::get('/producto/{id_producto}', 'PagesController@Producto_Detalle')->name('producto.detalle');
+Route::get('/producto/{id_producto}', 'PagesController@Producto_Detalle')->name('producto.producto_detalle');
 
-Route::post('/producto_agregar ', 'PagesController@Producto_Agregar')->name('producto.producto_agregar');
+Route::get('/producto_agregar', 'PagesController@Producto_Agregar')->name('producto.producto_agregar');
 
-Route::get('/producto_crear', 'PagesController@Producto_Crear')->name('producto.crear');
-
+Route::post('/producto_crear', 'PagesController@Producto_Crear')->name('producto.producto_crear');
 
 
 //Cliente

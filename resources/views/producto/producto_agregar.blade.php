@@ -3,13 +3,14 @@
 @section('seccion')
      <h1>Nuevo Grupo Electrogeno</h1>
      
-     <form action="{{ route('producto.crear') }}" method="POST">
+     <form action="{{ route('producto.producto_crear') }}" method="POST">
           @csrf
           <div class="form-row">
                <div class="form-group col-md-2">
                     <label for="">Codigo: </label>
                     <input type="text" name="codigo_producto" class="form-control">
                </div>
+               
                <div class="form-group col-md-6">
                     <label for="">Nombre: </label>
                     <input type="text" name="nombre_producto" class="form-control">
@@ -57,7 +58,13 @@
                </div>
           </div>
           <div class="form-row">
-               <button class="btn btn-primary" type="submit">Guardar</button>
+               <div class="form-group col-md-10">
+                    <label for="">Imagen: </label>
+                    <input type="text" name="imagen_producto" class="form-control">
+               </div>
+          </div>
+          <div class="form-row">
+               <button class="btn btn-success" type="submit">Guardar</button>
           </div>
           
      </form>   

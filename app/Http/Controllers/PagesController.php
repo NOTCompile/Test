@@ -11,26 +11,24 @@ class PagesController extends Controller
         return view('inicio');
     }
 
-
     //Productos
     public function Producto(){
-
         $item_producto = App\Producto::all();
 
-        return view('Producto', compact('item_producto'));
+        return view('producto', compact('item_producto'));
     }
 
     //Productos Detalles
     public function Producto_Detalle($id){
         $producto = App\Producto::find($id);
 
-        return view('producto.detalle', compact('producto'));
+        return view('producto.producto_detalle', compact('producto'));
     }
 
     //Productos Agregar
     public function Producto_Agregar(){
 
-        return view('producto.agregar');
+        return view('producto.producto_agregar');
     }
 
     //Productos Crear
@@ -51,14 +49,14 @@ class PagesController extends Controller
 
         $nuevo_producto->save();
 
-        return view('producto');
+        return view('producto.producto_agregar');
 
 
     }
 
     //Clientes
     public function Cliente(){
-        return view('Cliente');
+        return view('cliente');
     }
 
 
@@ -66,7 +64,7 @@ class PagesController extends Controller
     public function Usuario(){
         $nombre = App\Usuario::all();
 
-        return view('Usuario', compact('nombre'));
+        return view('usuario', compact('nombre'));
     }
 
 }

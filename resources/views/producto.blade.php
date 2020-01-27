@@ -4,7 +4,7 @@
 
      <h1>Grupos Electrogenos - Registrados</h1>
      <div class="container">
-          <button href="{{ route('producto.producto_agregar') }}" type="button" class="btn btn-success" >Nuevo Grupo Electrogeno</button>
+          <a href="{{ route('producto.producto_agregar') }}" class="btn btn-primary" role="button">Agregar Nuevo</a>
      </div>
      <div class="container my-4">
           <table class="table">
@@ -21,7 +21,7 @@
                     <tr>
                     <th scope="row">{{ $item->codigo_producto }}</th>
                     <th scope="row">
-                         <a href="{{ route('producto.detalle', $item) }}">
+                         <a href="{{ route('producto.producto_detalle', $item) }}">
                               {{ $item->nombre_producto }}
                          </a>
                     </th>
