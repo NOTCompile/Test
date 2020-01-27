@@ -10,25 +10,97 @@
      
      <form action="{{ route('producto.producto_crear') }}" method="POST">
           @csrf
+          @error('codigo_producto')
+               <div class="alert alert-danger">
+                    El codigo del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('nombre_producto')
+               <div class="alert alert-danger">
+                    El nombre del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('empresa_producto')
+               <div class="alert alert-danger">
+                    La empresa del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('ubicacion_producto')
+               <div class="alert alert-danger">
+                    La ubicacion_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('periocidad_producto')
+               <div class="alert alert-danger">
+                    periocidad_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('celular_producto')
+               <div class="alert alert-danger">
+                    El celular_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('hora_inicio_producto')
+               <div class="alert alert-danger">
+                    El hora_inicio_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('hora_fin_producto')
+               <div class="alert alert-danger">
+                    El hora_fin_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
+          @error('imagen_producto')
+               <div class="alert alert-danger">
+                    El imagen_producto del producto es obligatorio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+          @enderror
           <div class="form-row">
                <div class="form-group col-md-2">
                     <label for="">Codigo: </label>
-                    <input type="text" name="codigo_producto" class="form-control">
+                    <input type="text" name="codigo_producto" class="form-control" value="{{ old('codigo_producto') }}">
                </div>
                
                <div class="form-group col-md-6">
                     <label for="">Nombre: </label>
-                    <input type="text" name="nombre_producto" class="form-control">
+                    <input type="text" name="nombre_producto" class="form-control" value="{{ old('nombre_producto') }}">
                </div>
                <div class="form-group col-md-4">
                     <label for="">Empresa: </label>
-                    <input type="text" name="empresa_producto" class="form-control">
+                    <input type="text" name="empresa_producto" class="form-control" value="{{ old('empresa_producto') }}">
                </div>
           </div>
 
           <div class="form-group">
                <label for="">Ubicacion: </label>
-               <input type="text" name="ubicacion_producto" class="form-control">
+               <input type="text" name="ubicacion_producto" class="form-control" value="{{ old('ubicacion_producto') }}">
           </div>
 
           <div class="form-row">
@@ -51,21 +123,21 @@
                </div>
                <div class="form-group col-md-2">
                     <label for="">Celular: </label>
-                    <input type="text" name="celular_producto" class="form-control">
+                    <input type="text" name="celular_producto" class="form-control" value="{{ old('celular_producto') }}">
                </div>
                <div class="form-group col-md-2">
                     <label for="">Hora de Inicio</label>
-                    <input type="text" name="hora_inicio_producto" class="form-control">
+                    <input type="text" name="hora_inicio_producto" class="form-control" value="{{ old('hora_inicio_producto') }}">
                </div>
                <div class="form-group col-md-3">
                     <label for="">Hora de la Finalizacion</label>
-                    <input type="text" name="hora_fin_producto" class="form-control">
+                    <input type="text" name="hora_fin_producto" class="form-control" value="{{ old('hora_fin_producto') }}">
                </div>
           </div>
           <div class="form-row">
                <div class="form-group col-md-10">
                     <label for="">Imagen: </label>
-                    <input type="text" name="imagen_producto" class="form-control">
+                    <input type="text" name="imagen_producto" class="form-control" value="{{ old('imagen_producto') }}">
                </div>
           </div>
           <div class="form-row">

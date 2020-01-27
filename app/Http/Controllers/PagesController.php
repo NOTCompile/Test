@@ -35,6 +35,19 @@ class PagesController extends Controller
     public function Producto_Crear(Request $request){
         //return $request->all();
 
+        $request->validate([
+            'codigo_producto' => 'required',
+            'imagen_producto' => 'required',
+            'nombre_producto' => 'required',
+            'empresa_producto' => 'required',
+            'ubicacion_producto' => 'required',
+            'periocidad_producto' => 'required',
+            'tipo_producto' => 'required',
+            'celular_producto' => 'required',
+            'hora_inicio_producto' => 'required',
+            'hora_fin_producto' => 'required',
+        ]);
+
         $nuevo_producto = new App\Producto;
         $nuevo_producto->codigo_producto = $request->codigo_producto;
         $nuevo_producto->imagen_producto = $request->imagen_producto;
