@@ -3,7 +3,7 @@
 @section('seccion')
 
      <h1>Detalles de Grupo Electrogeno: {{ $producto->nombre_producto }}</h1>
-     <h4>ID: {{ $producto->id_producto }}</h4>
+     <h4>ID: {{ $producto->codigo_producto }}</h4>
      <h4>Imagen: {{ $producto->imagen_producto}}</h4>
      <h4>Nombre: {{ $producto->nombre_producto }}</h4>
      <h4>Empresa: {{ $producto->empresa_producto }}</h4>

@@ -27,6 +27,11 @@ class PagesController extends Controller
         return view('producto.detalle', compact('producto'));
     }
 
+    //Productos Agregar
+    public function Producto_Agregar(){
+
+        return view('producto.agregar');
+    }
 
     //Clientes
     public function Cliente(){

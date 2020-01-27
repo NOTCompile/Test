@@ -1,7 +1,11 @@
 @extends('plantilla')
 
 @section('seccion')
+
      <h1>Grupos Electrogenos - Registrados</h1>
+     <div class="container">
+          <button href="{{ route('producto.agregar') }}" type="button" class="btn btn-primary">Nuevo Grupo Electrogeno</button>
+     </div>
      <div class="container my-4">
           <table class="table">
                <thead>
