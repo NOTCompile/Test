@@ -2,8 +2,9 @@
 
 @section('seccion')
      <h1>Nuevo Grupo Electrogeno</h1>
-
-     <form action="">
+     
+     <form action="{{ route('producto.crear') }}" method="POST">
+          @csrf
           <div class="form-row">
                <div class="form-group col-md-2">
                     <label for="">Codigo: </label>
@@ -29,17 +30,17 @@
                     <label for="inputState">Periocidad</label>
                     <select name="periocidad_producto" id="inputState" class="form-control">
                          <option selected>Selecciona...</option>
-                         <option value="">Anual</option>
-                         <option value="">Bimestral</option>
+                         <option text="Anual">Anual</option>
+                         <option text="Bimestral">Bimestral</option>
                     </select>
                </div>
                <div class="form-group col-md-3">
-                    <label for="inputState">Tipo de Prodcuto: </label>
+                    <label for="inputState">Tipo de Producto: </label>
                     <select name="tipo_producto" id="inputState" class="form-control">
                          <option selected>Selecciona...</option>
-                         <option value="">Motor</option>
-                         <option value="">Generador</option>
-                         <option value="">Motor y Generador</option>
+                         <option text="Motor">Motor</option>
+                         <option text="Generador">Generador</option>
+                         <option text="Motor y Generador">Motor y Generador</option>
                     </select>
                </div>
                <div class="form-group col-md-2">
@@ -56,7 +57,7 @@
                </div>
           </div>
           <div class="form-row">
-               <button href="{{ route('producto.agregar') }}" type="button" class="btn btn-primary">Guardar</button>
+               <button class="btn btn-primary" type="submit">Guardar</button>
           </div>
           
      </form>   
