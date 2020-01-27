@@ -4,7 +4,7 @@
 
      <h1>Grupos Electrogenos - Registrados</h1>
      <div class="container">
-          <a href="{{ route('producto.producto_agregar') }}" class="btn btn-primary" role="button">Agregar Nuevo</a>
+          <a href="{{ route('producto.producto_agregar') }}" class="btn btn-success" role="button">Agregar Nuevo</a>
      </div>
      <div class="container my-4">
           <table class="table">

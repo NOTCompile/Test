@@ -25,6 +25,7 @@ class CreateProductosTable extends Migration
             $table->string('celular_producto');
             $table->string('hora_inicio_producto');
             $table->string('hora_fin_producto');
+            $table->timestamps();
         });
     }
 

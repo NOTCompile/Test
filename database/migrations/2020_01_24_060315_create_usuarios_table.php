@@ -22,7 +22,7 @@ class CreateUsuariosTable extends Migration
             $table->string('correo_usuario');
             $table->string('contraseña_usuario');
             $table->string('tipo_usuario');
-            
+            $table->timestamps();
         });
     }
 

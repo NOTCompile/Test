@@ -2,6 +2,11 @@
 
 @section('seccion')
      <h1>Nuevo Grupo Electrogeno</h1>
+     @if (session('mensaje'))
+          <div class="alert alert-success" role="alert">
+          {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
+        </div>
+     @endif
      
      <form action="{{ route('producto.producto_crear') }}" method="POST">
           @csrf

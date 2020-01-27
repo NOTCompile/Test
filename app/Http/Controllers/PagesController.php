@@ -49,9 +49,7 @@ class PagesController extends Controller
 
         $nuevo_producto->save();
 
-        return view('producto.producto_agregar');
-
-
+        return back()->with('mensaje', 'Se agrego correctamente');
     }
 
     //Clientes
