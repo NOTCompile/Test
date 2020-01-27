@@ -7,9 +7,11 @@ Route::get('/producto', 'PagesController@Producto')->name('Producto');
 
 Route::get('/producto/{id_producto}', 'PagesController@Producto_Detalle')->name('producto.detalle');
 
-Route::get('/agregar_producto ', 'PagesController@Producto_Agregar')->name('producto.agregar');
+Route::post('/producto_agregar ', 'PagesController@Producto_Agregar')->name('producto.producto_agregar');
 
-Route::post('/producto', 'PagesController@Producto_Crear')->name('producto.crear');
+Route::get('/producto_crear', 'PagesController@Producto_Crear')->name('producto.crear');
+
+
 
 //Cliente
 Route::get('/cliente', 'PagesController@Cliente')->name('Cliente');

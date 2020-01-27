@@ -51,7 +51,7 @@ class PagesController extends Controller
 
         $nuevo_producto->save();
 
-        return view('Producto');
+        return view('producto');
 
 
     }
