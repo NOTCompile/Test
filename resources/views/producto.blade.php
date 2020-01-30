@@ -9,6 +9,7 @@
      td{ color:#000000}
 
      </style>
+     <div class="container">
           <h1>REGISTRO DE GRUPOS ELECTROGENOS</h1>     
                <a href="{{ route('producto.producto_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Grupo Electrogeno</a>
 
@@ -23,7 +24,7 @@
                          </tr>
                     </thead>
 
-                    <tbody style="background:#DADADA; text-align: center">
+                    <tbody style="background:#DADADA;">
                     @foreach ($item_producto as $item)
                          <tr>
                               <td scope="row">{{ $item->codigo_producto }}</td>
@@ -42,5 +43,6 @@
                     @endforeach()                 
                     </tbody>
                </table>
-
+               <br>
+     </div>
 @endsection

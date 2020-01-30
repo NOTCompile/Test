@@ -4,11 +4,11 @@
 
      <style>
 
-          h4{}
+          h4{color:white}
 
           dt{color: rebeccapurple; align-content: center; background: blanchedalmond}
 
-          dd{}
+          dd{color: white}
 
      </style>
 
@@ -17,7 +17,14 @@
 
                <dl class="row">
                     <dt class="col-sm-5">Imagen:</dt>
-                    <dd class="col-sm-5">{{ $producto->imagen_producto }}</dd>
+                    
+                    <div>
+                         <img src="{{ url('img/producto/' . $producto->imagen_producto)  }}" >
+                    </div>
+                    
+                    <dd class="col-sm-5">
+                         
+                    </dd>
                     
                     <dt class="col-sm-5">ID:</dt>
                     <dd class="col-sm-5">{{ $producto->codigo_producto }}</dd>

@@ -15,7 +15,7 @@
         </div>
      @endif
      
-     <form action="{{ route('producto.producto_crear') }}" method="POST">
+     <form action="{{ route('producto.producto_crear') }}" method="POST" enctype="multipart/form-data" id="upload">
           @csrf
           @error('codigo_producto')
                <div class="alert alert-danger">
@@ -25,6 +25,7 @@
                     </button>
                </div>
           @enderror
+          
           @error('nombre_producto')
                <div class="alert alert-danger">
                     El nombre del producto es obligatorio.
@@ -33,6 +34,7 @@
                     </button>
                </div>
           @enderror
+          
           @error('empresa_producto')
                <div class="alert alert-danger">
                     La empresa del producto es obligatorio.
@@ -41,6 +43,7 @@
                     </button>
                </div>
           @enderror
+          
           @error('ubicacion_producto')
                <div class="alert alert-danger">
                     La ubicacion_producto del producto es obligatorio.
@@ -49,6 +52,7 @@
                     </button>
                </div>
           @enderror
+
           @error('periocidad_producto')
                <div class="alert alert-danger">
                     periocidad_producto del producto es obligatorio.
@@ -57,6 +61,7 @@
                     </button>
                </div>
           @enderror
+
           @error('celular_producto')
                <div class="alert alert-danger">
                     El celular_producto del producto es obligatorio.
@@ -65,6 +70,7 @@
                     </button>
                </div>
           @enderror
+
           @error('hora_inicio_producto')
                <div class="alert alert-danger">
                     El hora_inicio_producto del producto es obligatorio.
@@ -73,6 +79,7 @@
                     </button>
                </div>
           @enderror
+
           @error('hora_fin_producto')
                <div class="alert alert-danger">
                     El hora_fin_producto del producto es obligatorio.
@@ -81,6 +88,7 @@
                     </button>
                </div>
           @enderror
+
           @error('imagen_producto')
                <div class="alert alert-danger">
                     El imagen_producto del producto es obligatorio.
@@ -102,7 +110,7 @@
                </div>
                <div class="form-group col-md-4">
                     <label for="">Empresa: </label>
-                    <input type="text" name="empresa_producto" class="form-control" value="{{ old('empresa_producto') }}">
+                    <input type="text" name="empresa_producto" class="form-control" value="{{ old('empresa_producto') }}" text="hola">
                </div>
           </div>
 
@@ -143,9 +151,9 @@
                </div>
           </div>
           <div class="form-row">
-               <div class="form-group col-md-10">
+               <div class="form-group">
                     <label for="">Imagen: </label>
-                    <input type="text" name="imagen_producto" class="form-control" value="{{ old('imagen_producto') }}">
+                    <input type="file" name="imagen_producto" class="form-control-file" style="color:white">
                </div>
           </div>
 

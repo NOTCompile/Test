@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use App;
 
 class PagesController extends Controller
@@ -55,8 +56,7 @@ class PagesController extends Controller
         ]);
 
         $nuevo_producto = new App\Producto;
-        $nuevo_producto->codigo_producto = $request->codigo_producto;
-        $nuevo_producto->imagen_producto = $request->imagen_producto;
+        $nuevo_producto->codigo_producto = $request->codigo_producto;        
         $nuevo_producto->nombre_producto = $request->nombre_producto;
         $nuevo_producto->empresa_producto = $request->empresa_producto;
         $nuevo_producto->ubicacion_producto = $request->ubicacion_producto;
@@ -66,6 +66,14 @@ class PagesController extends Controller
         $nuevo_producto->hora_inicio_producto = $request->hora_inicio_producto;
         $nuevo_producto->hora_fin_producto = $request->hora_fin_producto;
 
+        $extension = $request->file('imagen_producto')->getClientOriginalExtension();
+        $file_name = $nuevo_producto->codigo_producto.'.'.$extension;
+
+        Image::make($request->file('imagen_producto'))
+            ->resize(144, 144)
+            ->save('img/productos/' . $file_name);
+
+        $nuevo_producto->imagen_producto = $extension;    
         $nuevo_producto->save();
 
         return back()->with('mensaje', 'Se agrego correctamente');

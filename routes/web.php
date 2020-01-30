@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/login', 'PagesController@Login')->name('Login');
+Route::get('/', 'PagesController@Login')->name('Login');
 
 Route::get('/inicio', 'PagesController@Inicio')->name('Inicio');
 
