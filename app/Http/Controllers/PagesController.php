@@ -7,6 +7,12 @@ use App;
 
 class PagesController extends Controller
 {
+    //Login
+    public function Login(){
+        return view('login');
+    }
+   
+    //Inicio
     public function Inicio(){
         return view('inicio');
     }
@@ -20,7 +26,7 @@ class PagesController extends Controller
 
     //Productos Detalles
     public function Producto_Detalle($id){
-        $producto = App\Producto::find($id);
+        $producto = App\Producto::findOrFail($id);
 
         return view('producto.producto_detalle', compact('producto'));
     }
@@ -63,6 +69,14 @@ class PagesController extends Controller
         $nuevo_producto->save();
 
         return back()->with('mensaje', 'Se agrego correctamente');
+    }
+
+    //Productos Editar
+    public function Producto_Editar($id){
+
+        $producto = App\Producto::findOrFail($id);
+
+        return view('producto.producto_editar', compact('producto'));
     }
 
     //Clientes

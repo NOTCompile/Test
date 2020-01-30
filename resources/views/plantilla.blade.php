@@ -10,47 +10,53 @@
 
     <title>Grupos Electrogenos</title>
   </head>
-  <body>
-    <div class="container-fluid bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{{ route('Inicio') }}">Inicio</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('Producto') }}">Grupos Electrogenos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('Cliente') }}">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('Usuario') }}">Usuario</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Manuales
-            </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Clientes</a>
-                <a class="dropdown-item" href="#">Tecnicos</a>
-                <a class="dropdown-item" href="#">...</a>
-              </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Contenedor-->
-      <div class="container">
-            @yield('seccion')
-      </div>
-    
-    
-    <!-- Footer-->
-    <br>
-    <div class="container-fluid bg-dark text-white text-center">Electromatic Industrial S.R.L Inventario</div>
 
+  <style>
+    nav{ background: #FFAD01 }
+  </style>
+  {{-- style="background-image:url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/11/15-Presentation-Background-Examples33.png)" --}}
+  <body>   
+    <nav class="navbar navbar-expand-sm navbar-light">
+        
+          <a class="navbar-brand" href="{{ route('Inicio') }}">
+            <img src="http://gruposelectrogenosei.com/img/grupos-electrogenos-arequipa.jpg" class="img-fluid">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="{{ route('Producto') }}" class="navbar-brand" style="color:">Grupos Electrogenos</a>
+              </li>
+              <li class="nav-item">
+                <a  href="{{ route('Cliente') }}" class="navbar-brand" style="">Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a  href="{{ route('Usuario') }}" class="navbar-brand" style="">Usuario</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Manuales
+                </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Grupos Electrogenos</a>
+                    <a class="dropdown-item" href="#">TTA</a>
+                    <a class="dropdown-item" href="#">...</a>
+                  </div>
+              </li>
+            </ul>
+          
+  </nav>
+    <!-- Contenedor-->
+      <div class="container-fluid" style="background:#3B3C3D">
+            @yield('seccion')      
+      </div>
+   
+    <!-- Footer-->
+    <div class="container-fluid pt-2 pb-2" style="background:#000000; color:white; text-align:center; bottom:0; position:fixed">
+      ©Todos los Derechos Reservados Electromatic Industrial S.R.L | Arequipa - Perú
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

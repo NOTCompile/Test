@@ -1,35 +1,46 @@
 @extends('plantilla')
 
 @section('seccion')
+     
+     <style>
+          
+     h1{color: white }
 
-     <h1>Grupos Electrogenos - Registrados</h1>
-     <div class="container">
-          <a href="{{ route('producto.producto_agregar') }}" class="btn btn-success" role="button">Agregar Nuevo</a>
-     </div>
-     <div class="container my-4">
-          <table class="table">
-               <thead>
-               <tr>
-               <th scope="col">Codigo</th>
-               <th scope="col">Nombre del Producto</th>
-               <th scope="col">Empresa del Producto</th>
-               <th scope="col">Ubicación del Producto</th>
-               </tr>
-               </thead>
-               <tbody>
-               @foreach ($item_producto as $item)
-                    <tr>
-                    <th scope="row">{{ $item->codigo_producto }}</th>
-                    <th scope="row">
-                         <a href="{{ route('producto.producto_detalle', $item) }}">
-                              {{ $item->nombre_producto }}
-                         </a>
-                    </th>
-                    <th scope="row">{{$item->empresa_producto}}</th>
-                    <th scope="row">{{$item->ubicacion_producto}}</th>
-                    </tr>  
-               @endforeach()                 
-               </tbody>
-          </table>
-     </div>
+     td{ color:#000000}
+
+     </style>
+          <h1>REGISTRO DE GRUPOS ELECTROGENOS</h1>     
+               <a href="{{ route('producto.producto_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Grupo Electrogeno</a>
+
+               <table class="table table-bordered table-sm">
+                    <thead class="thead-dark" style="text-align:center">
+                         <tr>
+                              <th scope="col">CODIGO</th>
+                              <th scope="col">NOMBRE DEL GRUPO ELECTROGENO</th>
+                              <th scope="col">EMPRESA</th>
+                              <th scope="col">UBICACION</th>
+                              <th scope="col">ACCIONES</th>
+                         </tr>
+                    </thead>
+
+                    <tbody style="background:#DADADA; text-align: center">
+                    @foreach ($item_producto as $item)
+                         <tr>
+                              <td scope="row">{{ $item->codigo_producto }}</td>
+                              <td scope="row">
+                                   <a href="{{ route('producto.producto_detalle', $item) }}">
+                                        {{ $item->nombre_producto }}
+                                   </a>
+                              </td>
+                              <td scope="row">{{$item->empresa_producto}}</td>
+                              <td scope="row">{{$item->ubicacion_producto}}</td>
+                              <td>
+                                   <a href=" " class="btn btn-warning btn-sm">Editar</a>
+                                   <a href=" " class="btn btn-danger btn-sm">Eliminar</a>
+                              </td>
+                         </tr>  
+                    @endforeach()                 
+                    </tbody>
+               </table>
+
 @endsection

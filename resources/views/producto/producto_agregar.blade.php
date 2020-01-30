@@ -1,7 +1,14 @@
 @extends('plantilla')
 
 @section('seccion')
-     <h1>Nuevo Grupo Electrogeno</h1>
+
+     <style>
+          h1{ color: white }
+
+          label{ color:white }
+     </style>
+     <a href="{{ route('Producto') }}">Volver</a>
+     <h1>GRUPO ELECTROGENO - NUEVO</h1>
      @if (session('mensaje'))
           <div class="alert alert-success" role="alert">
           {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
@@ -82,6 +89,7 @@
                     </button>
                </div>
           @enderror
+          
           <div class="form-row">
                <div class="form-group col-md-2">
                     <label for="">Codigo: </label>
@@ -140,10 +148,13 @@
                     <input type="text" name="imagen_producto" class="form-control" value="{{ old('imagen_producto') }}">
                </div>
           </div>
+
           <div class="form-row">
                <button class="btn btn-success" type="submit">Guardar</button>
           </div>
           
      </form>   
+
+     
 
 @endsection

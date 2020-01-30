@@ -2,16 +2,49 @@
 
 @section('seccion')
 
-     <h1>Detalles de Grupo Electrogeno: {{ $producto->nombre_producto }}</h1>
-     <h4>ID: {{ $producto->codigo_producto }}</h4>
-     <h4>Imagen: {{ $producto->imagen_producto}}</h4>
-     <h4>Nombre: {{ $producto->nombre_producto }}</h4>
-     <h4>Empresa: {{ $producto->empresa_producto }}</h4>
-     <h4>Ubicacion: {{ $producto->ubicacion_producto }}</h4>
-     <h4>Periocidad: {{ $producto->periocidad_producto }}</h4>
-     <h4>Tipo Producto: {{ $producto->tipo_producto }}</h4>
-     <h4>Celular: {{ $producto->celular_producto }}</h4>
-     <h4>Hora de Inicio: {{ $producto->hora_inicio_producto }}</h4>
-     <h4>Hora de Finalizacion: {{ $producto->hora_fin_producto}}</h4>
+     <style>
 
+          h4{}
+
+          dt{color: rebeccapurple; align-content: center; background: blanchedalmond}
+
+          dd{}
+
+     </style>
+
+     <div>
+          <h4>Detalles de Grupo Electrogeno: {{ $producto->nombre_producto }}</h4>
+
+               <dl class="row">
+                    <dt class="col-sm-5">Imagen:</dt>
+                    <dd class="col-sm-5">{{ $producto->imagen_producto }}</dd>
+                    
+                    <dt class="col-sm-5">ID:</dt>
+                    <dd class="col-sm-5">{{ $producto->codigo_producto }}</dd>
+
+                    <dt class="col-sm-5">Empresa</dt>
+                    <dd class="col-sm-5">{{ $producto->empresa_producto }}</dd>
+
+                    <dt class="col-sm-5">Ubicacion:</dt>
+                    <dd class="col-sm-5">{{ $producto->ubicacion_producto }}</dd>
+
+                    <dt class="col-sm-5">Periocidad:</dt>
+                    <dd class="col-sm-5">{{ $producto->periocidad_producto }}</dd>
+
+                    <dt class="col-sm-5">Tipo de Producto:</dt>
+                    <dd class="col-sm-5">{{ $producto->tipo_producto }}</dd>
+
+                    <dt class="col-sm-5">Celular:</dt>
+                    <dd class="col-sm-5">{{ $producto->celular_producto }}</dd>
+
+                    <dt class="col-sm-5">Hora de Inicio del Mantenimiento:</dt>
+                    <dd class="col-sm-5">{{ $producto->hora_inicio_producto }}</dd>
+
+                    <dt class="col-sm-5">Hora de Finalizacion del Mantenimiento</dt>
+                    <dd class="col-sm-5">{{ $producto->hora_fin_producto}}</dd>
+               </dl>     
+
+          <a href="{{ route('Producto') }}" class="btn btn-success" role="button">Volver</a>
+
+     </div>
 @endsection
