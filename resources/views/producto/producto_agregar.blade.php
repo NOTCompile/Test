@@ -8,13 +8,13 @@
           label{ color:white }
      </style>
      <a href="{{ route('Producto') }}">Volver</a>
-     <h1>GRUPO ELECTROGENO - NUEVO</h1>
-     @if (session('mensaje'))
-          <div class="alert alert-success" role="alert">
-          {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
-        </div>
-     @endif
      
+     @if (session('mensaje'))
+     <div class="alert alert-success" role="alert">
+          {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
+     </div>
+     @endif
+     <h1>GRUPO ELECTROGENO - NUEVO</h1>
      <form action="{{ route('producto.producto_crear') }}" method="POST" enctype="multipart/form-data" id="upload">
           @csrf
           @error('codigo_producto')
@@ -157,9 +157,10 @@
                </div>
           </div>
 
-          <div class="form-row">
-               <button class="btn btn-success" type="submit">Guardar</button>
-          </div>
+          <div>
+               <a href="{{ route('Producto') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
+               <button class="btn btn-success" type="submit">Guardar</button>               
+          </div>      
           
      </form>   
 

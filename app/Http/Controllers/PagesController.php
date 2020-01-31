@@ -79,7 +79,6 @@ class PagesController extends Controller
         return back()->with('mensaje', 'Se agrego correctamente');
     }
 
-    //Productos Editar
     public function Producto_Editar($id){
 
         $producto = App\Producto::findOrFail($id);
@@ -87,17 +86,110 @@ class PagesController extends Controller
         return view('producto.producto_editar', compact('producto'));
     }
 
+
+
+
+
     //Clientes
     public function Cliente(){
-        return view('cliente');
+        $item_cliente = App\Cliente::all();
+
+        return view('cliente', compact('item_cliente'));
     }
+
+    public function Cliente_Detalle($id){
+        $cliente = App\Cliente::findOrFail($id);
+
+        return view('cliente.cliente_detalle', compact('cliente'));
+    }
+
+    public function Cliente_Agregar(){
+        return view('cliente.cliente_agregar');
+    }
+
+    public function Cliente_Crear(Request $request){
+
+        $request->validate([
+            'codigo_cliente' => 'required',
+            'nombre_cliente' => 'required',
+            'sexo_cliente' => 'required',
+            'empresa_cliente' => 'required',
+            'edad_cliente' => 'required',
+            'correo_cliente' => 'required',
+            'direccion_cliente' => 'required',
+        ]);
+
+        $nuevo_cliente = new App\Cliente;
+        $nuevo_cliente->codigo_cliente = $request->codigo_cliente;        
+        $nuevo_cliente->nombre_cliente = $request->nombre_cliente;
+        $nuevo_cliente->sexo_cliente = $request->sexo_cliente;
+        $nuevo_cliente->empresa_cliente = $request->empresa_cliente;
+        $nuevo_cliente->edad_cliente = $request->edad_cliente;
+        $nuevo_cliente->correo_cliente = $request->correo_cliente;
+        $nuevo_cliente->direccion_cliente = $request->direccion_cliente;
+        $nuevo_cliente->celular_cliente = $request->celular_cliente;
+        $nuevo_cliente->telefono_cliente = $request->telefono_cliente;
+
+        $nuevo_cliente->save();
+
+        return back()->with('mensaje', 'Se agrego correctamente');
+    }
+
+    public function Cliente_Editar(){
+        return view('cliente.cliente_editar');
+    }
+
+
+
 
 
     //Usuario
     public function Usuario(){
-        $nombre = App\Usuario::all();
+        $item_usuario = App\Usuario::all();
 
-        return view('usuario', compact('nombre'));
+        return view('usuario', compact('item_usuario'));
     }
+
+    public function Usuario_Detalle($id){
+        $usuario = App\Usuario::findOrFail($id);
+
+        return view('usuario.usuario_detalle', compact('usuario'));
+    }
+
+    public function Usuario_Agregar(){
+        return view('usuario.usuario_agregar');
+    }
+
+    public function Usuario_Crear(Request $request){
+
+        $request->validate([
+            'codigo_usuario' => 'required',
+            'nombre_usuario' => 'required',
+            'sexo_usuario' => 'required',
+            'edad_usuario' => 'required',
+            'correo_usuario' => 'required',
+            'contraseña_usuario' => 'required',
+            'tipo_usuario' => 'required',
+        ]);
+
+        $nuevo_usuario = new App\Usuario;
+        $nuevo_usuario->codigo_usuario = $request->codigo_producto;        
+        $nuevo_usuario->nombre_usuario = $request->nombre_usuario;
+        $nuevo_usuario->sexo_usuario = $request->sexo_usuario;
+        $nuevo_usuario->edad_usuario = $request->edad_usuario;
+        $nuevo_usuario->correo_usuario = $request->correo_usuario;
+        $nuevo_usuario->contraseña_usuario = $request->contraseña_usuario;
+        $nuevo_usuario->tipo_usuario = $request->tipo_usuario;
+  
+        $nuevo_usuario->save();
+
+        return back()->with('mensaje', 'Se agrego correctamente');
+        
+    }
+
+    public function Usuario_Editar(){
+        return view('usuario.usuario_editar');
+    }
+
 
 }

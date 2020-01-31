@@ -15,10 +15,10 @@ class CreateListaOperatividadsTable extends Migration
     {
         Schema::create('lista__operatividads', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('codigo_item');
-            $table->varchar('componente');
-            $table->varchar('estado_operatividad');
-            $table->varchar('comentario_operatividad');
+            $table->string('codigo_item');
+            $table->string('componente');
+            $table->string('estado_operatividad');
+            $table->string('comentario_operatividad');
 
             $table->timestamps();
         });

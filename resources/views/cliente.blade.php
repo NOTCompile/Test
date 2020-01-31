@@ -1,24 +1,52 @@
 @extends('plantilla')
 
 @section('seccion')
-<h1>Cliente</h1>
+<div class="container">
+     <style>
+     
+          h1{color: white }
+     
+          td{ color:#000000}
+     
+     </style>
+     
+     <h1>REGISTRO DE CLIENTES</h1>     
+          <a href="{{ route('cliente.cliente_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Cliente</a>
 
-<h2>HOLA MUNDO</h2>
+          <table class="table table-bordered table-sm">
+               <thead class="thead-dark" style="text-align:center">
+                    <tr>
+                         <th scope="col">CODIGO</th>
+                         <th scope="col">NOMBRE</th>
+                         <th scope="col">EMPRESA</th>
+                         <th scope="col">CORREO</th>
+                         <th scope="col">CELULAR</th>
+                         <th scope="col">ACCIONES</th>
+                    </tr>
+               </thead>
 
-<html>
-     <head>
-        <title>SistemaWeb</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     </head>
-     <frameset rows="80,*" frameborder="0" bordercolor="#333" marginwidth="10%" marginheight="40" scrolling="no0">
-          <frame src="superior.html" name="sup"></frame>
-               <frameset rows="80,*" frameborder="0" bordercolor="#333" marginwidth="10%" marginheight="40" scrolling="yes">
-                    <frame src="izquierdo.html" name="izq"></frame>
-                    <frame src="izquierdo.html" name="izq"></frame>
-               </frameset>
-     </frameset> 
-</html>
+               <tbody style="background:#DADADA;">
+               @foreach ($item_cliente as $item)
+                    <tr>
+                         <td scope="row">{{ $item->codigo_cliente }}</td>
+                         <td scope="row">
+                              <a href="{{ route('cliente.cliente_detalle', $item) }}">
+                                   {{ $item->nombre_cliente }}
+                              </a>
+                         </td>
+                         <td scope="row">{{$item->empresa_cliente}}</td>
+                         <td scope="row">{{$item->correo_cliente}}</td>
+                         <td scope="row">{{$item->celular_cliente}}</td>
+                         <td>
+                              <a href=" " class="btn btn-warning btn-sm">Editar</a>
+                              <a href=" " class="btn btn-danger btn-sm">Eliminar</a>
+                         </td>
+                    </tr>  
+               @endforeach()                 
+               </tbody>
+          </table>
+          <br>
+</div>
 
 
 @endsection

@@ -19,11 +19,11 @@ class CreateClientesTable extends Migration
             $table->string('nombre_cliente');
             $table->string('sexo_cliente');
             $table->string('empresa_cliente');
-            $table->integer('edad_cliente');
+            $table->string('edad_cliente');
             $table->string('correo_cliente');
             $table->string('direccion_cliente');
             $table->string('celular_cliente');
-            $table->integer('telefono_cliente'); 
+            $table->string('telefono_cliente'); 
             $table->timestamps();
         });
     }

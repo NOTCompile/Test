@@ -19,7 +19,7 @@
                     <dt class="col-sm-5">Imagen:</dt>
                     
                     <div>
-                         <img src="{{ url('img/producto/' . $producto->imagen_producto)  }}" >
+                         <img src="{{ url('img/productos/' . $producto->codigo_producto . '.png')  }}" >
                     </div>
                     
                     <dd class="col-sm-5">

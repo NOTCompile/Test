@@ -15,8 +15,8 @@ class CreateOperatividadsTable extends Migration
     {
         Schema::create('operatividads', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('estado_operatividad');
-            $table->varchar('comentario_operatividad');
+            $table->string('estado_operatividad');
+            $table->string('comentario_operatividad');
 
             $table->timestamps();
         });

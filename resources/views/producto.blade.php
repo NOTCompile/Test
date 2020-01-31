@@ -12,7 +12,7 @@
      <div class="container">
           <h1>REGISTRO DE GRUPOS ELECTROGENOS</h1>     
                <a href="{{ route('producto.producto_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Grupo Electrogeno</a>
-
+               
                <table class="table table-bordered table-sm">
                     <thead class="thead-dark" style="text-align:center">
                          <tr>
