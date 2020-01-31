@@ -73,7 +73,9 @@ class PagesController extends Controller
             ->resize(144, 144)
             ->save('img/productos/' . $file_name);
 
-        $nuevo_producto->imagen_producto = $extension;    
+        $nuevo_producto->imagen_producto = $extension;
+
+
         $nuevo_producto->save();
 
         return back()->with('mensaje', 'Se agrego correctamente');
@@ -104,6 +106,7 @@ class PagesController extends Controller
     }
 
     public function Cliente_Agregar(){
+
         return view('cliente.cliente_agregar');
     }
 
@@ -128,11 +131,10 @@ class PagesController extends Controller
         $nuevo_cliente->correo_cliente = $request->correo_cliente;
         $nuevo_cliente->direccion_cliente = $request->direccion_cliente;
         $nuevo_cliente->celular_cliente = $request->celular_cliente;
-        $nuevo_cliente->telefono_cliente = $request->telefono_cliente;
 
         $nuevo_cliente->save();
 
-        return back()->with('mensaje', 'Se agrego correctamente');
+        return back()->with('mensaje_cliente', 'Se agrego correctamente');
     }
 
     public function Cliente_Editar(){

@@ -43,8 +43,7 @@
 
                </dl>     
           <div>
-               <a href="{{ route('Cliente') }}" class="btn btn-success" role="button">VOLVER</a>
-               <a href="{{ route('Cliente') }}" class="btn btn-success" role="button">VOLVER</a>
+               <a href="{{ route('Cliente') }}" class="btn btn-danger" role="button">VOLVER</a>
           </div>
 
      

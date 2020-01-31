@@ -11,6 +11,7 @@
           </style>
 
           <h1>REGISTRO DE USUARIOS</h1>     
+               <a href="{{ route('Inicio') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
                <a href="{{ route('usuario.usuario_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Usuario</a>
 
                <table class="table table-bordered table-sm">

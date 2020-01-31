@@ -35,7 +35,7 @@
                 <a  href="{{ route('Cliente') }}" class="navbar-brand">CLIENTES</a>
               </li>
               <li class="nav-item">
-                <a  href="{{ route('Usuario') }}" class="navbar-brand">USUARIO</a>
+                <a  href="{{ route('Usuario') }}" class="navbar-brand">USUARIOS</a>
               </li>
               <li class="nav-item">
                 <a  href="{{ route('Login') }}" class="navbar-brand">SALIR</a>

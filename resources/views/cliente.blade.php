@@ -10,7 +10,8 @@
      
      </style>
      
-     <h1>REGISTRO DE CLIENTES</h1>     
+     <h1>REGISTRO DE CLIENTES</h1>
+          <a href="{{ route('Inicio') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
           <a href="{{ route('cliente.cliente_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Cliente</a>
 
           <table class="table table-bordered table-sm">

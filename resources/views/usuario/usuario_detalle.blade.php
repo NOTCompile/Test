@@ -46,7 +46,7 @@
 
                </dl>     
 
-          <a href="{{ route('Usuario') }}" class="btn btn-success" role="button">VOLVER</a>
+          <a href="{{ route('Usuario') }}" class="btn btn-danger" role="button">VOLVER</a>
 
 
 @endsection

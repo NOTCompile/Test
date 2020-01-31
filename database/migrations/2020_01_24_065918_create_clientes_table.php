@@ -23,7 +23,6 @@ class CreateClientesTable extends Migration
             $table->string('correo_cliente');
             $table->string('direccion_cliente');
             $table->string('celular_cliente');
-            $table->string('telefono_cliente'); 
             $table->timestamps();
         });
     }

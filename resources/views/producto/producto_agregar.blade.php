@@ -7,14 +7,14 @@
 
           label{ color:white }
      </style>
-     <a href="{{ route('Producto') }}">Volver</a>
      
      @if (session('mensaje'))
      <div class="alert alert-success" role="alert">
           {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
      </div>
+     
      @endif
-     <h1>GRUPO ELECTROGENO - NUEVO</h1>
+     <h1>NUEVO GRUPO ELECTROGENO</h1>
      <form action="{{ route('producto.producto_crear') }}" method="POST" enctype="multipart/form-data" id="upload">
           @csrf
           @error('codigo_producto')
