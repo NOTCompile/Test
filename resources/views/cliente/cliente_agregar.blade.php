@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('seccion')
-
+<div class="container">
      <style>
           h1{ color: white }
 
@@ -50,6 +50,10 @@
                     <label for="">Empresa: </label>
                     <input type="text" name="empresa_cliente" class="form-control" value="{{ old('empresa_cliente') }}">
                </div>
+               <div class="form-group col-1">
+                    <label for="">Edad: </label>
+                    <input type="text" name="edad_cliente" class="form-control" value="{{ old('correo_cliente') }}">
+               </div>
                <div class="form-group col-lg">
                     <label for="">Correo: </label>
                     <input type="text" name="correo_cliente" class="form-control" value="{{ old('correo_cliente') }}">
@@ -73,5 +77,5 @@
      </form>   
 
      
-
+</div>
 @endsection

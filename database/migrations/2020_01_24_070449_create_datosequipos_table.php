@@ -24,6 +24,7 @@ class CreateDatosequiposTable extends Migration
             $table->string('modelo_generador');
             $table->string('nserie_generador');
             $table->string('potencia_generador');
+            
             $table->timestamps();
 
         });

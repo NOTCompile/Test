@@ -33,7 +33,7 @@
                     <dd class="col-sm-5">{{ $usuario->sexo_usuario }}</dd>
 
                     <dt class="col-sm-5">Edad:</dt>
-                    <dd class="col-sm-5">{{ $usuario->edad_usuario }}</dd>
+                    <dd class="col-sm-5">{{ $usuario->edad_usuario }} años</dd>
 
                     <dt class="col-sm-5">Correo:</dt>
                     <dd class="col-sm-5">{{ $usuario->correo_usuario }}</dd>

@@ -44,15 +44,12 @@ class PagesController extends Controller
 
         $request->validate([
             'codigo_producto' => 'required',
-            'imagen_producto' => 'required',
             'nombre_producto' => 'required',
             'empresa_producto' => 'required',
             'ubicacion_producto' => 'required',
             'periocidad_producto' => 'required',
             'tipo_producto' => 'required',
             'celular_producto' => 'required',
-            'hora_inicio_producto' => 'required',
-            'hora_fin_producto' => 'required',
         ]);
 
         $nuevo_producto = new App\Producto;
@@ -78,7 +75,7 @@ class PagesController extends Controller
 
         $nuevo_producto->save();
 
-        return back()->with('mensaje', 'Se agrego correctamente');
+        return back()->with('mensaje_producto', 'Se agrego correctamente');
     }
 
     public function Producto_Editar($id){
@@ -111,15 +108,10 @@ class PagesController extends Controller
     }
 
     public function Cliente_Crear(Request $request){
+        //return $request->all();
 
         $request->validate([
             'codigo_cliente' => 'required',
-            'nombre_cliente' => 'required',
-            'sexo_cliente' => 'required',
-            'empresa_cliente' => 'required',
-            'edad_cliente' => 'required',
-            'correo_cliente' => 'required',
-            'direccion_cliente' => 'required',
         ]);
 
         $nuevo_cliente = new App\Cliente;
@@ -175,7 +167,7 @@ class PagesController extends Controller
         ]);
 
         $nuevo_usuario = new App\Usuario;
-        $nuevo_usuario->codigo_usuario = $request->codigo_producto;        
+        $nuevo_usuario->codigo_usuario = $request->codigo_usuario;        
         $nuevo_usuario->nombre_usuario = $request->nombre_usuario;
         $nuevo_usuario->sexo_usuario = $request->sexo_usuario;
         $nuevo_usuario->edad_usuario = $request->edad_usuario;
@@ -185,7 +177,7 @@ class PagesController extends Controller
   
         $nuevo_usuario->save();
 
-        return back()->with('mensaje', 'Se agrego correctamente');
+        return back()->with('mensaje_usuario', 'Se agrego correctamente');
         
     }
 

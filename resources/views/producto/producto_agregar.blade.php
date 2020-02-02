@@ -1,18 +1,18 @@
 @extends('plantilla')
 
 @section('seccion')
-
+<div class="container">
      <style>
           h1{ color: white }
 
           label{ color:white }
      </style>
      
-     @if (session('mensaje'))
+     @if (session('mensaje_producto'))
      <div class="alert alert-success" role="alert">
-          {{session('mensaje') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
+          {{session('mensaje_producto') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
      </div>
-     
+
      @endif
      <h1>NUEVO GRUPO ELECTROGENO</h1>
      <form action="{{ route('producto.producto_crear') }}" method="POST" enctype="multipart/form-data" id="upload">
@@ -65,33 +65,6 @@
           @error('celular_producto')
                <div class="alert alert-danger">
                     El celular_producto del producto es obligatorio.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-          @enderror
-
-          @error('hora_inicio_producto')
-               <div class="alert alert-danger">
-                    El hora_inicio_producto del producto es obligatorio.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-          @enderror
-
-          @error('hora_fin_producto')
-               <div class="alert alert-danger">
-                    El hora_fin_producto del producto es obligatorio.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-          @enderror
-
-          @error('imagen_producto')
-               <div class="alert alert-danger">
-                    El imagen_producto del producto es obligatorio.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                     </button>
@@ -165,5 +138,5 @@
      </form>   
 
      
-
+</div>
 @endsection
