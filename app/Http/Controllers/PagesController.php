@@ -23,7 +23,7 @@ class PagesController extends Controller
    
     //Productos
     public function Producto(){
-        $item_producto = App\Producto::paginate(10);
+        $item_producto = App\Producto::paginate(5);
 
         return view('producto', compact('item_producto'));
     }
@@ -130,7 +130,7 @@ class PagesController extends Controller
 
     //Clientes
     public function Cliente(){
-        $item_cliente = App\Cliente::all();
+        $item_cliente = App\Cliente::paginate(5);
 
         return view('cliente', compact('item_cliente'));
     }
@@ -168,17 +168,44 @@ class PagesController extends Controller
         return back()->with('mensaje_cliente', 'Se agrego correctamente');
     }
 
-    public function Cliente_Editar(){
-        return view('cliente.cliente_editar');
+    public function Cliente_Editar($id){
+        $cliente_editar = App\Cliente::findOrFail($id);
+
+        return view('cliente.cliente_editar', compact('cliente_editar'));
     }
 
+    public function Cliente_Actualizar(Request $request, $id){
 
+        $cliente_actualizar = app\Cliente::findOrFail($id);
 
+        $cliente_actualizar->codigo_cliente = $request->codigo_cliente;        
+        $cliente_actualizar->nombre_cliente = $request->nombre_cliente;
+        $cliente_actualizar->sexo_cliente = $request->sexo_cliente;
+        $cliente_actualizar->empresa_cliente = $request->empresa_cliente;
+        $cliente_actualizar->edad_cliente = $request->edad_cliente;
+        $cliente_actualizar->correo_cliente = $request->correo_cliente;
+        $cliente_actualizar->direccion_cliente = $request->direccion_cliente;
+        $cliente_actualizar->celular_cliente = $request->celular_cliente;
+
+        $cliente_actualizar->save();
+
+        return back()->with('mensaje', 'Logrado');
+
+    }
+
+    public function Cliente_Eliminar($id){
+
+        $cliente_eliminar = App\Cliente::findOrFail($id);
+
+        $cliente_eliminar->delete();
+
+        return back()->with('mensaje', 'Eliminado');
+    }
 
 
     //Usuario
     public function Usuario(){
-        $item_usuario = App\Usuario::all();
+        $item_usuario = App\Usuario::paginate(5);
 
         return view('usuario', compact('item_usuario'));
     }
@@ -220,8 +247,37 @@ class PagesController extends Controller
         
     }
 
-    public function Usuario_Editar(){
-        return view('usuario.usuario_editar');
+    public function Usuario_Editar($id){
+        $usuario_editar = App\Usuario::findOrFail($id);
+
+        return view('usuario.usuario_editar', compact('usuario_editar'));
+    }
+
+    public function Usuario_Actualizar(Request $request, $id){
+
+        $usuario_actualizar = app\Usuario::findOrFail($id);
+
+        $usuario_actualizar->codigo_usuario = $request->codigo_usuario;        
+        $usuario_actualizar->nombre_usuario = $request->nombre_usuario;
+        $usuario_actualizar->sexo_usuario = $request->sexo_usuario;
+        $usuario_actualizar->edad_usuario = $request->edad_usuario;
+        $usuario_actualizar->correo_usuario = $request->correo_usuario;
+        $usuario_actualizar->contraseña_usuario = $request->contraseña_usuario;
+        $usuario_actualizar->tipo_usuario = $request->tipo_usuario;
+  
+        $usuario_actualizar->save();
+
+        return back()->with('mensaje_usuario', 'Se agrego correctamente');
+
+    }
+
+    public function Usuario_Eliminar($id){
+
+        $usuario_eliminar = App\Usuario::findOrFail($id);
+
+        $usuario_eliminar->delete();
+
+        return back()->with('mensaje', 'Eliminado');
     }
 
 

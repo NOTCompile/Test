@@ -71,7 +71,7 @@
                <button class="btn btn-outline-success" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Guardar</button>               
           </div> 
           
-     </form>   
+     </form>
 
      
 </div>

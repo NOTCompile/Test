@@ -31,7 +31,11 @@ Route::get('/cliente_agregar', 'PagesController@Cliente_Agregar')->name('cliente
 
 Route::post('/cliente_crear', 'PagesController@Cliente_Crear')->name('cliente.cliente_crear');
 
-Route::get('/cliente_editar/{id}', 'PagesController@Cliente_Editar')->name('cliente.cliente_editar');
+Route::get('/cliente_editar/{id?}', 'PagesController@Cliente_Editar')->name('cliente.cliente_editar');
+
+Route::put('/cliente_editar/{id?}', 'PagesController@Cliente_Actualizar')->name('cliente.cliente_actualizar');
+
+Route::delete('/cliente_eliminar/{id?}', 'PagesController@Cliente_Eliminar')->name('cliente.cliente_eliminar');
 
 
 //Usuario
@@ -44,4 +48,9 @@ Route::get('/usuario_agregar', 'PagesController@Usuario_Agregar')->name('usuario
 Route::post('/usuario_crear', 'PagesController@Usuario_Crear')->name('usuario.usuario_crear');
 
 Route::get('/usuario_editar/{id}', 'PagesController@Usuario_Editar')->name('usuario.usuario_editar');
+
+Route::put('/usuario_editar/{id?}', 'PagesController@Usuario_Actualizar')->name('usuario.usuario_actualizar');
+
+Route::delete('/usuario_eliminar/{id?}', 'PagesController@Usuario_Eliminar')->name('usuario.usuario_eliminar');
+
 

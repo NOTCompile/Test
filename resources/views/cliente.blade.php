@@ -28,7 +28,11 @@
                               <td class="border border-dark text-left">{{$item->correo_cliente}}</td>
                               <td class="border border-dark text-left">{{$item->celular_cliente}}</td>
                               <td class="border text-center border-dark">
-                                   <div class="btn-group"> <a href="#" class="btn btn-outline-warning">EDITAR</a> <a href="#" class="btn btn-outline-danger">ELIMINAR</a> </div>
+                                   <div class="btn-group"> <a href="{{ route('cliente.cliente_editar', $item) }}" class="btn btn-outline-warning">EDITAR</a> 
+                                        <form action="{{ route('cliente.cliente_eliminar', $item) }}" method="POST" class="d-inline">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button  class="btn btn-outline-danger" type="submit">ELIMINAR</button> </div>
                               </td>
                          </tr>
                          <tr></tr>

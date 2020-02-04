@@ -26,7 +26,11 @@
                               <td class="border border-dark text-left">{{$item->tipo_usuario}}</td>
                               <td class="border border-dark text-left">{{$item->correo_usuario}}</td>
                               <td class="border text-center border-dark">
-                                   <div class="btn-group"> <a href="#" class="btn btn-outline-warning">EDITAR</a> <a href="#" class="btn btn-outline-danger">ELIMINAR</a> </div>
+                                   <div class="btn-group"> <a href="{{ route('usuario.usuario_editar', $item) }}" class="btn btn-outline-warning">EDITAR</a> 
+                                        <form action="{{ route('usuario.usuario_eliminar', $item) }}" method="POST" class="d-inline">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button  class="btn btn-outline-danger" type="submit">ELIMINAR</button> </div>
                               </td>
                          </tr>
                          <tr></tr>
@@ -34,4 +38,6 @@
                          </tbody>
                     </table>
                     </div>
+
+                    {{ $item_usuario->links() }}
 @endsection

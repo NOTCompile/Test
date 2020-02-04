@@ -2,7 +2,7 @@
 
 @section('seccion')
 
-     <h1>Editar nota *{{ $producto_editar->nombre_producto}}*</h1>
+     <h1>Editar Producto: {{ $producto_editar->nombre_producto}}</h1>
      <form action="{{ route('producto.producto_actualizar', $producto_editar->id) }}" method="POST" enctype="multipart/form-data" id="upload">
           @csrf
           @method('PUT')
