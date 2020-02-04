@@ -17,6 +17,10 @@ Route::post('/producto_crear', 'PagesController@Producto_Crear')->name('producto
 
 Route::get('/producto_editar/{id?}', 'PagesController@Producto_Editar')->name('producto.producto_editar');
 
+Route::put('/producto_editar/{id?}', 'PagesController@Producto_Actualizar')->name('producto.producto_actualizar');
+
+Route::delete('/producto_eliminar/{id?}', 'PagesController@Producto_Eliminar')->name('producto.producto_eliminar');
+
 
 //Cliente
 Route::get('/cliente', 'PagesController@Cliente')->name('Cliente');

@@ -23,7 +23,7 @@ class PagesController extends Controller
    
     //Productos
     public function Producto(){
-        $item_producto = App\Producto::all();
+        $item_producto = App\Producto::paginate(10);
 
         return view('producto', compact('item_producto'));
     }
@@ -94,14 +94,38 @@ class PagesController extends Controller
     }
 
     public function Producto_Editar($id){
-
         $producto_editar = App\Producto::findOrFail($id);
 
         return view('producto.producto_editar', compact('producto_editar'));
     }
 
+    public function Producto_Actualizar(Request $request, $id){
 
+        $producto_actualizar = app\Producto::findOrFail($id);
 
+        $producto_actualizar->codigo_producto = $request->codigo_producto;        
+        $producto_actualizar->nombre_producto = $request->nombre_producto;
+        $producto_actualizar->empresa_producto = $request->empresa_producto;
+        $producto_actualizar->ubicacion_producto = $request->ubicacion_producto;
+        $producto_actualizar->periocidad_producto = $request->periocidad_producto;
+        $producto_actualizar->tipo_producto = $request->tipo_producto;
+        $producto_actualizar->celular_producto = $request->celular_producto;
+        $producto_actualizar->hora_inicio_producto = $request->hora_inicio_producto;
+        $producto_actualizar->hora_fin_producto = $request->hora_fin_producto;
+
+        $producto_actualizar->save();
+
+        return back()->with('mensaje', 'Logrado');
+    }
+
+    public function Producto_Eliminar($id){
+
+        $producto_eliminar = App\Producto::findOrFail($id);
+
+        $producto_eliminar->delete();
+
+        return back()->with('mensaje', 'Eliminado');
+    }
 
 
     //Clientes

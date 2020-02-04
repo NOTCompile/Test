@@ -118,6 +118,7 @@
                     <input type="text" name="hora_fin_producto" class="form-control" value="{{ old('hora_fin_producto') }}">
                </div>
           </div>
+
           <div class="form-row">
                <div class="form-group">
                     <label for="">Imagen: </label>
@@ -157,7 +158,7 @@
                     $(this).parents(".control-group").remove();
                });
       
-      });
+          });
                
            
            </script>

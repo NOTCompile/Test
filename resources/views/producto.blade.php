@@ -26,7 +26,11 @@
                               <td class="border border-dark text-left">{{$item->empresa_producto}}</td>
                               <td class="border border-dark text-left">{{$item->ubicacion_producto}}</td>
                               <td class="border text-center border-dark">
-                                   <div class="btn-group"> <a href="{{ route('producto.producto_editar') }}" class="btn btn-outline-warning">EDITAR</a> <a href="" class="btn btn-outline-danger">ELIMINAR</a> </div>
+                              <div class="btn-group"> <a href="{{ route('producto.producto_editar', $item) }}" class="btn btn-outline-warning">EDITAR</a> 
+                                   <form action="{{ route('producto.producto_eliminar', $item) }}" method="POST" class="d-inline">
+                                   @method('DELETE')
+                                   @csrf
+                                   <button  class="btn btn-outline-danger" type="submit">ELIMINAR</button> </div>
                               </td>
                          </tr>
                          <tr></tr>
@@ -34,8 +38,7 @@
                          </tbody>
                     </table>
                     </div>
-                      
-                    
-               
+
+                    {{ $item_producto->links() }}               
      
 @endsection

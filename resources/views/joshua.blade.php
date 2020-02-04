@@ -1,4 +1,5 @@
 @extends('plantilla')
+
 @section('seccion')
      <form method="post" action="{{url('form')}}" enctype="multipart/form-data">
           {{csrf_field()}}
@@ -20,6 +21,8 @@
         </form>
       </div>
      </div>
+
+
       <script type="text/javascript" style="">
         $(document).ready(function() {
           $(".btn-success").click(function() {
@@ -31,4 +34,6 @@
           });
         });
       </script>
+
+
 @endsection
