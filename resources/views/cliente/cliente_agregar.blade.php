@@ -2,11 +2,7 @@
 
 @section('seccion')
 <div class="container">
-     <style>
-          h1{ color: white }
-
-          label{ color:white }
-     </style>
+    
      
      @if (session('mensaje_cliente'))
      <div class="alert alert-success" role="alert">
@@ -70,9 +66,9 @@
                </div>
           </div>
           <div>
-               <a href="{{ route('Cliente') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
-               <button class="btn btn-success" type="submit">Guardar</button>               
-          </div>      
+               <a class="btn btn-outline-primary" href="{{ route('Cliente') }}"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Volver </a>
+               <button class="btn btn-outline-success" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Guardar</button>               
+          </div>    
           
      </form>   
 

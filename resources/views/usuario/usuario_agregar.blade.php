@@ -2,11 +2,6 @@
 
 @section('seccion')
 <div class="container">
-     <style>
-          h1{ color: white }
-
-          label{ color:white }
-     </style>
      
      @if (session('mensaje_usuario'))
      <div class="alert alert-success" role="alert">
@@ -14,7 +9,7 @@
      </div>
      @endif
 
-     <h1>NUEVO CLIENTE</h1>
+     <h1>Nuevo Usuario</h1>
      <form action="{{ route('usuario.usuario_crear') }}" method="POST">
           @csrf
           @error('codigo_usuario')
@@ -72,9 +67,9 @@
                </div> 
           </div>
           <div>
-               <a href="{{ route('Usuario') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
-               <button class="btn btn-success" type="submit">Guardar</button>               
-          </div>      
+               <a class="btn btn-outline-primary" href="{{ route('Usuario') }}"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Volver </a>
+               <button class="btn btn-outline-success" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Guardar</button>               
+          </div> 
           
      </form>   
 

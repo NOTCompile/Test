@@ -1,49 +1,37 @@
 @extends('plantilla')
 
 @section('seccion')
-     <div class="container">
-          <style>
-          
-               h1{color: white }
-          
-               td{ color:#000000}
-          
-          </style>
-
-          <h1>REGISTRO DE USUARIOS</h1>     
-               <a href="{{ route('Inicio') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
-               <a href="{{ route('usuario.usuario_agregar') }}" class="btn" role="button" style="background:#FFAC00;color:white">Nuevo Usuario</a>
-
-               <table class="table table-bordered table-sm">
-                    <thead class="thead-dark" style="text-align:center">
+     
+     <h3 class="display-4">Usuarios</h3>
+                    <a class="btn btn-outline-primary" href="{{ route('usuario.usuario_agregar') }}">Agregar Nuevo Usuario</a>
+                    <p> </p>
+                    <div class="table-responsive">
+                    <table class="table table-bordered ">
+                         <thead class="thead-dark">
                          <tr>
-                              <th scope="col">CODIGO</th>
-                              <th scope="col">NOMBRE</th>
-                              <th scope="col">TIPO DE USUARIO</th>
-                              <th scope="col">CORREO</th>
-                              <th scope="col">ACCIONES</th>
+                              <th class="text-center border border-dark">Codigo</th>
+                              <th class="text-center border border-dark">Nombre</th>
+                              <th class="text-center border border-dark">Tipo de Usuario</th>
+                              <th class="text-center border border-dark">Correo</th>
+                              <th class="text-center border border-dark">Acciones</th>
                          </tr>
-                    </thead>
-
-                    <tbody style="background:#DADADA;">
-                    @foreach ($item_usuario as $item)
-                         <tr>
-                              <td scope="row">{{ $item->codigo_usuario }}</td>
-                              <td scope="row">
-                                   <a href="{{ route('usuario.usuario_detalle', $item) }}">
-                                        {{ $item->nombre_usuario }}
-                                   </a>
+                         </thead>
+                         <tbody>
+                         @foreach ($item_usuario as $item)
+                         <tr class="table-info">
+                              <td class="border border-dark text-left">{{ $item->codigo_usuario }}</td>
+                              <th class="border border-dark text-left"><a href="{{ route('usuario.usuario_detalle', $item) }}">
+                                   {{ $item->nombre_usuario }}
+                              </a></th>
+                              <td class="border border-dark text-left">{{$item->tipo_usuario}}</td>
+                              <td class="border border-dark text-left">{{$item->correo_usuario}}</td>
+                              <td class="border text-center border-dark">
+                                   <div class="btn-group"> <a href="#" class="btn btn-outline-warning">EDITAR</a> <a href="#" class="btn btn-outline-danger">ELIMINAR</a> </div>
                               </td>
-                              <td scope="row">{{$item->tipo_usuario}}</td>
-                              <td scope="row">{{$item->correo_usuario}}</td>
-                              <td>
-                                   <a href=" " class="btn btn-warning btn-sm">Editar</a>
-                                   <a href=" " class="btn btn-danger btn-sm">Eliminar</a>
-                              </td>
-                         </tr>  
-                    @endforeach()                 
-                    </tbody>
-               </table>
-               <br>
-     </div>
+                         </tr>
+                         <tr></tr>
+                         @endforeach()   
+                         </tbody>
+                    </table>
+                    </div>
 @endsection

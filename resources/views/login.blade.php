@@ -10,7 +10,7 @@
 
 <body style="background-image: url('https://luisentrenadorpersonal.com/wp-content/uploads/luis-entrenador.jpg');width: 100% ;  height: 100% ;">
   <nav class="navbar navbar-dark border" style="background:#FFAD01">
-    <div class="d-flex justify-content-center container-fluid"> <a class="navbar-brand" href="{{ route('Inicio') }}">
+    <div class="d-flex justify-content-center container-fluid"> <a class="navbar-brand" href="{{ route('Producto') }}">
         <img src="http://gruposelectrogenosei.com/img/grupos-electrogenos-arequipa.jpg" class="img-fluid">
       </a> </div>
   </nav>

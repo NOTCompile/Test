@@ -2,6 +2,6 @@
 
 @section('seccion')
 
-     <h1>Editar nota {{ $producto->nombre_producto}}</h1>
+     <h1>Editar nota {{ $producto_editar->nombre_producto}}</h1>
 
 @endsection

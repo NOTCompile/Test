@@ -4,6 +4,8 @@ Route::get('/', 'PagesController@Login')->name('Login');
 
 Route::get('/inicio', 'PagesController@Inicio')->name('Inicio');
 
+Route::get('/joshua', 'PagesController@Joshua')->name('Joshua');
+
 //Producto
 Route::get('/producto', 'PagesController@Producto')->name('Producto');
 
@@ -13,7 +15,7 @@ Route::get('/producto_agregar', 'PagesController@Producto_Agregar')->name('produ
 
 Route::post('/producto_crear', 'PagesController@Producto_Crear')->name('producto.producto_crear');
 
-Route::get('/producto_editar/{id}', 'PagesController@Producto_Editar')->name('producto.producto_editar');
+Route::get('/producto_editar/{id?}', 'PagesController@Producto_Editar')->name('producto.producto_editar');
 
 
 //Cliente

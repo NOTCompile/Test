@@ -1,17 +1,6 @@
 @extends('plantilla')
 
 @section('seccion')
-
-     <style>
-
-          h4{color:white}
-
-          dt{color: rebeccapurple; align-content: center; background: blanchedalmond}
-
-          dd{color: white}
-
-     </style>
-
      
           <h4>Detalles de {{ $cliente->nombre_cliente }}</h4>
 

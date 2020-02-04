@@ -2,12 +2,7 @@
 
 @section('seccion')
 <div class="container">
-     <style>
-          h1{ color: white }
-
-          label{ color:white }
-     </style>
-     
+          
      @if (session('mensaje_producto'))
      <div class="alert alert-success" role="alert">
           {{session('mensaje_producto') }} <a href="{{ route('Producto') }}" class="alert-link">¿Ver Grupos Electrogenos?</a>. Click para ver los Registros
@@ -126,17 +121,48 @@
           <div class="form-row">
                <div class="form-group">
                     <label for="">Imagen: </label>
-                    <input type="file" name="imagen_producto" class="form-control-file" style="color:white">
+                    <div class="input-group control-group increment" >
+                         <input type="file" name="imagen_producto" class="form-control">
+                              <div class="input-group-btn"> 
+                                   <button class="btn btn-success" type="button"><i class="fa fa-plus"></i> Agregar</button>
+                              </div>
+                    </div>
+                    <div class="clone hide">
+                         <div class="control-group input-group" style="margin-top:10px">
+                              <input type="file" name="" class="form-control">
+                                   <div class="input-group-btn"> 
+                                        <button class="btn btn-danger" type="button"><i class="fa fa-times"></i> Remove</button>
+                                   </div>
+                         </div>
+                    </div>
                </div>
           </div>
-
-          <div>
-               <a href="{{ route('Producto') }}" class="btn" role="button" style="background:red;color:white">Volver</a>
-               <button class="btn btn-success" type="submit">Guardar</button>               
-          </div>      
+               
+          <div class="form-row">
+               <div class="form-group">
+                    <a class="btn btn-outline-primary" href="{{ route('Usuario') }}"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Volver </a>
+                    <button class="btn btn-outline-success" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Guardar</button>
+               </div>
+          </div>
           
-     </form>   
-
+          <script type="text/javascript">
+               $(document).ready(function() {
+           
+               $(".btn-success").click(function(){ 
+                    var html = $(".clone").html();
+                    $(".increment").after(html);
+               });
+          
+               $("body").on("click",".btn-danger",function(){ 
+                    $(this).parents(".control-group").remove();
+               });
+      
+      });
+               
+           
+           </script>
+           
+     </form>
      
 </div>
 @endsection

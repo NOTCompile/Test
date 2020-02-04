@@ -12,12 +12,15 @@ class PagesController extends Controller
     public function Login(){
         return view('login');
     }
-   
-    //Inicio
+
     public function Inicio(){
         return view('inicio');
     }
 
+    public function Joshua(){
+        return view('joshua');
+    }
+   
     //Productos
     public function Producto(){
         $item_producto = App\Producto::all();
@@ -49,7 +52,8 @@ class PagesController extends Controller
             'ubicacion_producto' => 'required',
             'periocidad_producto' => 'required',
             'tipo_producto' => 'required',
-            'celular_producto' => 'required',
+            'celular_producto' => 'required',            
+            
         ]);
 
         $nuevo_producto = new App\Producto;
@@ -64,25 +68,36 @@ class PagesController extends Controller
         $nuevo_producto->hora_fin_producto = $request->hora_fin_producto;
 
         $extension = $request->file('imagen_producto')->getClientOriginalExtension();
+
         $file_name = $nuevo_producto->codigo_producto.'.'.$extension;
 
         Image::make($request->file('imagen_producto'))
-            ->resize(144, 144)
-            ->save('img/productos/' . $file_name);
+            ->save('img/productos/'.$file_name);
 
         $nuevo_producto->imagen_producto = $extension;
 
+       /* if($request->hasfile('imagen_producto'))
+         {
+            foreach($request->file('imagen_producto') as $imagen)
+            {
+                $name = $imagen->getClientOriginalName();
+                $imagen->move(public_path().'/images/', $name);  
+                $data[] = $name;                
+            }
+         }
+
+        $nuevo_producto->imagen_producto=json_encode($data);*/
 
         $nuevo_producto->save();
-
+         
         return back()->with('mensaje_producto', 'Se agrego correctamente');
     }
 
     public function Producto_Editar($id){
 
-        $producto = App\Producto::findOrFail($id);
+        $producto_editar = App\Producto::findOrFail($id);
 
-        return view('producto.producto_editar', compact('producto'));
+        return view('producto.producto_editar', compact('producto_editar'));
     }
 
 
