@@ -111,11 +111,11 @@
                </div>
                <div class="form-group col-md-2">
                     <label for="">Hora de Inicio</label>
-                    <input type="text" name="hora_inicio_producto" class="form-control" value="{{ old('hora_inicio_producto') }}">
+                    <input type="time" name="hora_inicio_producto" class="form-control" value="{{ old('hora_inicio_producto') }}">
                </div>
                <div class="form-group col-md-3">
                     <label for="">Hora de la Finalizacion</label>
-                    <input type="text" name="hora_fin_producto" class="form-control" value="{{ old('hora_fin_producto') }}">
+                    <input type="time" name="hora_fin_producto" class="form-control" value="{{ old('hora_fin_producto') }}">
                </div>
           </div>
 
@@ -130,7 +130,7 @@
                     </div>
                     <div class="clone hide">
                          <div class="control-group input-group" style="margin-top:10px">
-                              <input type="file" name="" class="form-control">
+                              <input type="file" name="imagen_producto" class="form-control">
                                    <div class="input-group-btn"> 
                                         <button class="btn btn-danger" type="button"><i class="fa fa-times"></i> Remove</button>
                                    </div>

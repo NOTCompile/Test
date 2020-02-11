@@ -66,6 +66,17 @@
                     </select>
                </div> 
           </div>
+          <div class="form-row">
+               <div class="form-group">
+                    <label for="">Imagen: </label>
+                    <div class="input-group control-group increment" >
+                         <input type="file" name="imagen_producto" class="form-control">
+                              <div class="input-group-btn"> 
+                                   <button class="btn btn-success" type="button"><i class="fa fa-plus"></i> Agregar</button>
+                              </div>
+                    </div>
+               </div>
+          </div>
           <div>
                <a class="btn btn-outline-primary" href="{{ route('Usuario') }}"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;Volver </a>
                <button class="btn btn-outline-success" type="submit"><i class="fa fa-floppy-o"></i>&nbsp;Guardar</button>               

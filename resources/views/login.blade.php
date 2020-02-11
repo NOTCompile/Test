@@ -18,13 +18,21 @@
   <div class="py-4 text-center">
     <div class="container">
       <div class="row">
-        <div class="mx-auto col-md-6 col-10 bg-white p-5">
+        <div class="mx-auto col-md-6 col-10 bg-info p-5">
           <h1 class="mb-4">Iniciar Sesion</h1>
-          <form>
-            <div class="form-group">Usuario <input type="email" class="form-control" placeholder="Enter email" id="form9"></div>
-            <div class="form-group mb-3">Contraseña <input type="password" class="form-control" placeholder="Password" id="form10"> <small class="form-text text-muted text-right">
-                <a href="#"> Recover password</a>
-              </small> </div> <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+          <form method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
+            <div class="form-group mb-3 text-left {{ $errors->has('email') ? 'has-error' : '|'}}">
+            Usuario <input type="email" class="form-control" placeholder="Usuario" name="email" >
+              {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+            </div>
+            <div class="form-group mb-3 text-left {{ $errors->has('password') ? 'has-error' : '|'}}">
+              Contraseña <input type="password" class="form-control" placeholder="Contraseña" name="password"> 
+              {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
+              
+              <small class="form-text text-muted text-right">
+                <a href="#"> Recordar Contraseña</a>
+              </small> </div> <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
           </form>
         </div>
       </div>

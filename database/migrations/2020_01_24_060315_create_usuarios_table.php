@@ -16,12 +16,13 @@ class CreateUsuariosTable extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo_usuario');
-            $table->string('nombre_usuario');
-            $table->string('sexo_usuario');
-            $table->string('edad_usuario');
-            $table->string('correo_usuario');
+            $table->string('imagen_usuario',200)->nullable();
+            $table->string('nombre_usuario',150);
+            $table->string('sexo_usuario',20);
+            $table->integer('edad_usuario');
+            $table->string('correo_usuario',200);
             $table->string('contraseña_usuario');
-            $table->string('tipo_usuario');
+            $table->string('tipo_usuario',30);
             $table->timestamps();
         });
     }

@@ -15,16 +15,17 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo_producto');
-            $table->string('imagen_producto');
-            $table->string('nombre_producto');
-            $table->string('empresa_producto');
-            $table->string('ubicacion_producto');
-            $table->string('periocidad_producto');
-            $table->string('tipo_producto');
-            $table->string('celular_producto');
-            $table->string('hora_inicio_producto');
-            $table->string('hora_fin_producto');
+            $table->string('codigo_producto',10);            
+            $table->string('nombre_producto',200);
+            $table->string('empresa_producto',50);
+            $table->string('ubicacion_producto',200);
+            $table->string('periocidad_producto',20);
+            $table->string('tipo_producto',20);
+            $table->integer('celular_producto');
+            $table->time('hora_inicio_producto')->nullable();
+            $table->time('hora_fin_producto')->nullable();
+            $table->string('imagen_producto',200)->nullable();
+
             $table->timestamps();
         });
     }

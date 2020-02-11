@@ -2,9 +2,13 @@
 
 Route::get('/', 'PagesController@Login')->name('Login');
 
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+
 Route::get('/inicio', 'PagesController@Inicio')->name('Inicio');
 
 Route::get('/joshua', 'PagesController@Joshua')->name('Joshua');
+
+
 
 //Producto
 Route::get('/producto', 'PagesController@Producto')->name('Producto');
@@ -22,6 +26,8 @@ Route::put('/producto_editar/{id?}', 'PagesController@Producto_Actualizar')->nam
 Route::delete('/producto_eliminar/{id?}', 'PagesController@Producto_Eliminar')->name('producto.producto_eliminar');
 
 
+
+
 //Cliente
 Route::get('/cliente', 'PagesController@Cliente')->name('Cliente');
 
@@ -36,6 +42,8 @@ Route::get('/cliente_editar/{id?}', 'PagesController@Cliente_Editar')->name('cli
 Route::put('/cliente_editar/{id?}', 'PagesController@Cliente_Actualizar')->name('cliente.cliente_actualizar');
 
 Route::delete('/cliente_eliminar/{id?}', 'PagesController@Cliente_Eliminar')->name('cliente.cliente_eliminar');
+
+
 
 
 //Usuario
